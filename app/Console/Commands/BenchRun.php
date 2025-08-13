@@ -8,8 +8,8 @@ use Illuminate\Support\Str;
 
 class BenchRun extends Command
 {
-    protected $signature = 'bench:run {--bench=gen1} {--model=}';
-    protected $description = 'Run a benchmark (gen1/gen2) with a given model via OpenRouter and update leaderboard';
+    protected $signature = 'bench:run {--bench=gen1} {--model=} {--image-mode=base64} {--tolerant}';
+    protected $description = 'Run a benchmark (gen1..gen9) with a single model via OpenRouter and update leaderboard';
 
     public function handle(): int
     {
@@ -20,8 +20,11 @@ class BenchRun extends Command
             return self::FAILURE;
         }
 
-        $folder = $bench === 'gen2' ? 'gen2' : 'gen1';
-        $base = base_path("public/benchmarks/{$folder}");
+        if (!preg_match('/^gen([1-9])$/', $bench)) {
+            $this->error('Invalid --bench. Expected one of: gen1..gen9');
+            return self::FAILURE;
+        }
+        $base = base_path("public/benchmarks/{$bench}");
         if (!is_dir($base)) {
             $this->error("Benchmark folder not found: {$base}");
             return self::FAILURE;
@@ -39,7 +42,11 @@ class BenchRun extends Command
         ]);
         $this->info("Running {$bench} on {$model}...");
         $t0 = microtime(true);
-        $p = new Process(['python', '-u', 'eval/run_openrouter.py', '--model', $model, '--images', $images, '--labels', $labels, '--out', $pred, '--progress'], base_path(), $env, null, 3600);
+        $args = ['python', '-u', 'eval/run_openrouter.py', '--model', $model, '--images', $images, '--labels', $labels, '--out', $pred, '--progress'];
+        $imageMode = (string) ($this->option('image-mode') ?? 'base64');
+        if ($imageMode !== '') { array_push($args, '--image-mode', $imageMode); }
+        if ($this->option('tolerant')) { $args[] = '--tolerant'; }
+        $p = new Process($args, base_path(), $env, null, 3600);
         $p->setTimeout(3600);
         $p->run(function ($type, $buffer) { $this->output->write($buffer); });
         if (!$p->isSuccessful()) {
@@ -80,59 +87,58 @@ class BenchRun extends Command
         $metrics = json_decode(file_get_contents($score), true);
         $m = $metrics['metrics'] ?? [];
         $usage = $metrics['usage'] ?? [];
-        $this->updateLeaderboard($bench, $model, $m, $metrics['duration_ms']??$durationMs, $usage);
+        $count = 0;
+        if (is_file($labels)) { $count = max(0, count(file($labels, FILE_IGNORE_NEW_LINES))); }
+        $this->updateLeaderboard($bench, $count, $model, $m, $metrics['duration_ms']??$durationMs, $usage);
         $this->info(sprintf('Done. Top1 %.2f%% Top5 %.2f%% F1 %.2f%% Duration %dms Tokens %d/%d', ($m['top1']??0)*100, ($m['top5']??0)*100, ($m['macro_f1']??0)*100, $metrics['duration_ms']??$durationMs, $usage['prompt_tokens']??0, $usage['completion_tokens']??0));
         return self::SUCCESS;
     }
 
-    private function updateLeaderboard(string $bench, string $model, array $m, int $durationMs = 0, array $usage = []): void
+    private function updateLeaderboard(string $benchSlug, int $count, string $model, array $m, int $durationMs = 0, array $usage = []): void
     {
-		$path = base_path('resources/data/leaderboard.json');
-		$dir = dirname($path);
-		if (!is_dir($dir)) {
-			@mkdir($dir, 0775, true);
-		}
-		$fp = @fopen($path, 'c+');
-		if ($fp === false) {
-			return;
-		}
-		if (@flock($fp, LOCK_EX)) {
-			$size = filesize($path);
-			rewind($fp);
-			$raw = $size ? fread($fp, $size) : '[]';
-			$data = json_decode($raw, true);
-			if (!is_array($data)) { $data = []; }
-			$now = date('Y-m-d');
-			$name = $bench === 'gen2' ? 'PokeBench v1 (Gen2 100)' : 'PokeBench v1 (Gen1 151)';
-			$found = false;
+        $path = base_path('resources/data/leaderboard.json');
+        $dir = dirname($path);
+        if (!is_dir($dir)) { @mkdir($dir, 0775, true); }
+        $fp = @fopen($path, 'c+');
+        if ($fp === false) { return; }
+        if (@flock($fp, LOCK_EX)) {
+            $size = filesize($path);
+            rewind($fp);
+            $raw = $size ? fread($fp, $size) : '[]';
+            $data = json_decode($raw, true);
+            if (!is_array($data)) { $data = []; }
+            $now = date('Y-m-d');
+            $genNum = (int) preg_replace('/[^0-9]/', '', $benchSlug);
+            $name = "PokeBench v1 (Gen{$genNum} {$count})";
+            $found = false;
             foreach ($data as &$row) {
-				if (($row['benchmark'] ?? '') === $name && ($row['model'] ?? '') === $model) {
-					$row['metrics'] = ['top1' => round($m['top1'] ?? 0, 4), 'top5' => round($m['top5'] ?? 0, 4), 'macro_f1' => round($m['macro_f1'] ?? 0, 4)];
-					$row['date'] = $now;
+                if (($row['benchmark'] ?? '') === $name && ($row['model'] ?? '') === $model) {
+                    $row['metrics'] = ['top1' => round($m['top1'] ?? 0, 4), 'top5' => round($m['top5'] ?? 0, 4), 'macro_f1' => round($m['macro_f1'] ?? 0, 4)];
+                    $row['date'] = $now;
                     $row['duration_ms'] = $durationMs;
                     if (!empty($usage)) { $row['usage'] = $usage; }
-					$found = true; break;
-				}
-			}
-			if (!$found) {
-				$data[] = [
-					'team' => 'PokeBenchAI',
-					'model' => $model,
-					'benchmark' => $name,
-					'task' => 'T1',
+                    $found = true; break;
+                }
+            }
+            if (!$found) {
+                $data[] = [
+                    'team' => 'PokeBenchAI',
+                    'model' => $model,
+                    'benchmark' => $name,
+                    'task' => 'T1',
                     'metrics' => ['top1' => round($m['top1'] ?? 0, 4), 'top5' => round($m['top5'] ?? 0, 4), 'macro_f1' => round($m['macro_f1'] ?? 0, 4)],
-					'date' => $now,
+                    'date' => $now,
                     'duration_ms' => $durationMs,
                     'usage' => $usage,
-				];
-			}
-			rewind($fp);
-			ftruncate($fp, 0);
-			fwrite($fp, json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
-			fflush($fp);
-			flock($fp, LOCK_UN);
-		}
-		fclose($fp);
+                ];
+            }
+            rewind($fp);
+            ftruncate($fp, 0);
+            fwrite($fp, json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+            fflush($fp);
+            flock($fp, LOCK_UN);
+        }
+        fclose($fp);
     }
 }
 

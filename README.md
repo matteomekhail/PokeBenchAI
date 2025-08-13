@@ -1,88 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## PokeBenchAI
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Benchmark suite to evaluate multi‑modal LLMs on Pokémon recognition across generations. It runs models via OpenRouter, scores predictions locally, and updates a lightweight leaderboard used by the web UI.
 
-## PokeBenchAI (MVP)
+IMPORTANT: Use Laravel Artisan commands to run benchmarks (php artisan bench:run-all <gen>). Do not run the Python scripts directly.
 
-Leaderboard statica con Laravel + Inertia (React) e script Python di scoring per T1 (classificazione specie Pokémon).
+## How benchmarks are performed
 
-### Formato Ground Truth
-- JSONL (una riga per immagine):
+### Data layout
+- For each generation `gen1..gen9`, the dataset lives in `public/benchmarks/<gen>/`:
+  - `labels.txt`: one class per line (canonical label names)
+  - `images.json`: list of `{ image_id, url | b64 }`
+  - `ground_truth.jsonl`: one JSON object per line `{ image_id, class }`
+
+### Execution pipeline
+These steps are orchestrated by Laravel Artisan commands. Do NOT call the Python scripts directly; they are invoked for you by the PHP commands.
+1) Predictions are produced by a Python runner that calls OpenRouter (internal detail):
+   - `eval/run_openrouter.py --model <provider/model> --images <images.json> --labels <labels.txt> --out <predictions.json>`
+   - Options:
+     - `--image-mode=base64|url` to control how images are sent to the provider (default: base64)
+     - `--tolerant` to accept free‑text outputs and map them to labels if strict JSON is missing
+2) Scores are computed locally (internal detail):
+   - `eval/score.py --ground-truth <ground_truth.jsonl> --predictions <predictions.json> --out <scores.json>`
+   - Metrics include Top‑1, Top‑5, Macro‑F1, plus usage and duration metadata when available
+3) The Laravel command updates `resources/data/leaderboard.json`, which powers the UI pages.
+
+## Prerequisites
+
+- PHP 8.2+
+- Composer
+- Node.js 18+ and npm (only if you want to run the UI locally)
+- Python 3.10+ available as `python` on your PATH
+  - Install Python deps: `pip install -r eval/requirements.txt`
+- OpenRouter API key
+
+## Configure your OpenRouter API key
+
+1) Copy the environment file and generate an app key:
+```bash
+cp .env.example .env
+php artisan key:generate
 ```
-{"image_id": "0001.png", "class": "bulbasaur"}
+2) Edit `.env` and set your key:
+```env
+OPENROUTER_API_KEY=your_api_key_here
 ```
 
-### Formato Predictions
-- JSON con lista `entries`:
-```
-{
-  "entries": [
-    {"image_id": "0001.png", "probs": {"bulbasaur": 0.9, "ivysaur": 0.08}}
-  ]
-}
-```
-- Alternativa JSONL con colonne `image_id`, `probs` o `label`.
+## How to run the benchmarks
 
-### Scoring (Top-1/Top-5, Macro-F1)
-Prerequisiti:
-```
-python3 -m venv .venv && source .venv/bin/activate
+IMPORTANT: Always use the Laravel Artisan commands below to run benchmarks. Do not execute the Python scripts directly unless you are developing the runner internals.
+
+### Quick start
+```bash
+composer install
+npm install            # optional, only for running the UI locally
 pip install -r eval/requirements.txt
-```
-Esecuzione:
-```
-python eval/score.py --ground-truth public/examples/ground_truth.jsonl \
-  --predictions public/examples/predictions.json --out scores.json
-```
-Output esempio:
-```
-{"task": "T1", "metrics": {"top1": 0.6667, "top5": 1.0, "macro_f1": 0.6667}}
+
+php artisan bench:run-all gen6
+# or, with experimental flags (still in testing):
+php artisan bench:run-all gen5 --image-mode=url --tolerant
 ```
 
-### Leaderboard statica
-- I dati visualizzati sono in `resources/data/leaderboard.json`.
-- Modifica il file e rigenera asset (`npm run build`) per aggiornare la pagina.
+- `--image-mode` and `--tolerant` are still in testing and may change.
+- Running a generation triggers multiple model processes in parallel; ensure you have sufficient OpenRouter credits/limits.
 
-## Learning Laravel
+### Single‑model run (all generations)
+```bash
+php artisan bench:run --bench=gen1 --model="openai/gpt-4o-mini"
+php artisan bench:run --bench=gen7 --model="google/gemini-2.5-flash" --image-mode=url --tolerant   # experimental flags
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Notes:
+- bench:run supports gen1..gen9 for a single model.
+- `--image-mode` and `--tolerant` are still in testing.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### All models for a generation (parallel)
+```bash
+php artisan bench:run-all gen3
+```
+## View results (UI)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+npm run dev
+```
+Then open the homepage. You can:
+- Browse each generation’s page for model comparisons
+- Open a model detail page per generation
 
-## Laravel Sponsors
+The UI reads from `resources/data/leaderboard.json` which is updated after scoring completes.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Notes and known limitations
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Python command name: the orchestrator invokes `python`. On macOS, ensure `python` points to Python 3 (e.g., via pyenv or a symlink), not only `python3`.
+- Rate limits and cost: running all models in parallel can be intensive. Consider `--limit`/`--start` options in `eval/run_openrouter.py` if you customize the runner.
+- Tolerant and URL modes: still experimental; mapping/norms for label names may evolve.
+- Dataset subsets: some generations may use curated subsets to avoid ambiguous forms or duplicate sprites. You can extend any generation by editing `labels.txt`, `ground_truth.jsonl`, and `images.json` accordingly.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- PRs welcome for new providers/models, better label normalization, or improved visualizations.
+- Please include reproducibility notes and sample outputs when adding new models.
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
