@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Pokemon HG/SS inspired theme */
+:root {
+  --pk-cream: #F7F4EB;
+  --pk-black: #141414;
+  --pk-gray: #2A2A2A;
+  --pk-red: #E53935;
+  --pk-red-dark: #C62828;
+  --pk-yellow: #FFD54F;
+  --pk-yellow-dark: #FBC02D;
+  --pk-text: #EFEFEF;
+  --pk-border: #2b2b2b;
+  --pk-panel: #171717;
+  --pk-card: #1C1C1C;
+}
+
+.pk-bg { background: linear-gradient(180deg, #161616 0%, #1b1b1b 100%); color: var(--pk-text); }
+.pk-title {
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  color: var(--pk-text);
+}
+.pk-btn {
+  display: inline-block;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: 11px;
+  padding: 10px 12px;
+  background: #1f1f1f;
+  color: var(--pk-text);
+  border: 2px solid var(--pk-text);
+  border-radius: 10px;
+  box-shadow: 0 3px 0 #000;
+  transition: transform .06s ease-in-out, filter .06s ease-in-out;
+}
+.pk-btn:hover { transform: translateY(1px); box-shadow: 0 2px 0 #000; filter: brightness(1.1); }
+
+.pk-frame {
+  background: var(--pk-panel);
+  border: 1.5px solid var(--pk-border);
+  border-radius: 12px;
+  box-shadow: 0 6px 0 #000;
+  padding: 20px;
+}
+
+/* Cards */
+.pk-card { background: var(--pk-card); border: 1.5px solid var(--pk-border); border-radius: 12px; box-shadow: 0 4px 0 #000; }
+.pk-card-h { font-family: 'Press Start 2P', system-ui, sans-serif; font-size: 13px; color: var(--pk-text); }
+
+/* Chart bars */
+.pk-bar { width: 3rem; border: 1.5px solid var(--pk-text); border-bottom: none; border-radius: 10px 10px 0 0; }
+.pk-bar-red { background: linear-gradient(180deg, var(--pk-red) 0%, var(--pk-red-dark) 100%); }
+.pk-bar-gray { background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%); }
+.pk-bar-yellow { background: linear-gradient(180deg, var(--pk-yellow) 0%, var(--pk-yellow-dark) 100%); border-color: #1b1b1b; }
+
+/* Chart grid and axis */
+.pk-chart { position: relative; }
+.pk-grid-line { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.08); }
+.pk-y-label { position: absolute; left: -38px; font-size: 10px; color: #cfcfcf; font-family: 'Press Start 2P', system-ui, sans-serif; }
+
+/* Accents */
+.pk-accent-red-line { height: 3px; background: linear-gradient(90deg, var(--pk-red), var(--pk-red-dark)); }
+.pk-badge-yellow {
+  display: inline-block; padding: 2px 6px; font-size: 10px; border-radius: 999px;
+  background: linear-gradient(180deg, var(--pk-yellow), var(--pk-yellow-dark)); color: #1b1b1b;
+  border: 1px solid #1b1b1b; box-shadow: 0 1px 0 #000;
+}
+

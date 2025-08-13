@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="shadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#ffffff" stroke="#111" stroke-width="2"/>
+  <!-- Red stripe -->
+  <rect x="2" y="28" width="60" height="8" fill="#d22"/>
+  <!-- Center button -->
+  <circle cx="32" cy="32" r="10" fill="#eee" stroke="#111" stroke-width="2"/>
+  <circle cx="32" cy="32" r="5" fill="#fff" stroke="#666" stroke-width="1"/>
+  <!-- Subtle top shadow -->
+  <ellipse cx="32" cy="18" rx="22" ry="10" fill="url(#shadow)"/>
+</svg>

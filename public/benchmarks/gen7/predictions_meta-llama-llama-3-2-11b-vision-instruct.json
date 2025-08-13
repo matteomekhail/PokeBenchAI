@@ -1,0 +1,1 @@
+{"entries": [{"image_id": "777.png", "probs": {"kommo o": 0.8, "togedemaru": 0.2}}, {"image_id": "778.png", "probs": {}}, {"image_id": "779.png", "probs": {"mimikyu disguised": 0.9999999999999999}}], "usage": {"prompt_tokens": 5676, "completion_tokens": 134, "total_tokens": 5810, "input_images": 0}}

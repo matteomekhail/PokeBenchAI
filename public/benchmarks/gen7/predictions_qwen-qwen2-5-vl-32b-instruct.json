@@ -1,0 +1,1 @@
+{"entries": [{"image_id": "777.png", "probs": {"mimikyu disguised": 0.95, "cosmog": 0.03, "cosmoem": 0.02}}, {"image_id": "778.png", "probs": {"mimikyu disguised": 0.95, "togedemaru": 0.03, "cosmog": 0.02}}], "usage": {"prompt_tokens": 584, "completion_tokens": 101, "total_tokens": 685, "input_images": 0}}

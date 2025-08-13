@@ -1,0 +1,1 @@
+{"task": "T1", "metrics": {"top1": 0.9851851851851852, "top5": 0.9925925925925926, "macro_f1": 0.9900497512437813}, "usage": {"prompt_tokens": 131760, "completion_tokens": 4982, "total_tokens": 136742, "input_images": 0}}

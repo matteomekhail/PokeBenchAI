@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="shadow2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#ffffff" stroke="#111" stroke-width="2"/>
+  <!-- Top purple half -->
+  <path d="M2,32 A30,30 0 0 1 62,32 L2,32 Z" fill="#7a2ba0"/>
+  <!-- Bottom white half already via circle fill -->
+  <!-- Black band -->
+  <rect x="2" y="28" width="60" height="8" fill="#111"/>
+  <!-- Center button -->
+  <circle cx="32" cy="32" r="10" fill="#eee" stroke="#111" stroke-width="2"/>
+  <circle cx="32" cy="32" r="5" fill="#fff" stroke="#666" stroke-width="1"/>
+  <!-- M letters -->
+  <path d="M18 22 L18 16 L22 20 L26 16 L26 22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 22 L38 16 L42 20 L46 16 L46 22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <!-- Top glare -->
+  <ellipse cx="32" cy="16" rx="20" ry="8" fill="url(#shadow2)"/>
+</svg>

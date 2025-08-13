@@ -1,0 +1,2396 @@
+[
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-5-chat",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9551,
+            "top5": 1,
+            "macro_f1": 0.9401
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271768,
+        "usage": {
+            "prompt_tokens": 90424,
+            "completion_tokens": 3723,
+            "total_tokens": 94147,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.0-flash-001",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.8321,
+            "top5": 0.8931,
+            "macro_f1": 0.7919
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271861,
+        "usage": {
+            "prompt_tokens": 133142,
+            "completion_tokens": 3501,
+            "total_tokens": 136643,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-mini",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7455,
+            "top5": 0.9545,
+            "macro_f1": 0.6642
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271837,
+        "usage": {
+            "prompt_tokens": 1023660,
+            "completion_tokens": 3652,
+            "total_tokens": 1027312,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.0-flash-001",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.84,
+            "top5": 0.91,
+            "macro_f1": 0.7883
+        },
+        "date": "2025-08-13",
+        "duration_ms": 177175,
+        "usage": {
+            "prompt_tokens": 80600,
+            "completion_tokens": 3025,
+            "total_tokens": 83625,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-sonnet-4",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.625,
+            "top5": 0.7778,
+            "macro_f1": 0.5197
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271697,
+        "usage": {
+            "prompt_tokens": 61560,
+            "completion_tokens": 3289,
+            "total_tokens": 64849,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-opus-4.1",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.92,
+            "top5": 0.96,
+            "macro_f1": 0.8718
+        },
+        "date": "2025-08-13",
+        "duration_ms": 276017,
+        "usage": {
+            "prompt_tokens": 42750,
+            "completion_tokens": 2816,
+            "total_tokens": 45566,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/mistral-small-3.2-24b-instruct",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.12,
+            "top5": 0.2,
+            "macro_f1": 0.0598
+        },
+        "date": "2025-08-13",
+        "duration_ms": 275895,
+        "usage": {
+            "prompt_tokens": 64332,
+            "completion_tokens": 3122,
+            "total_tokens": 67454,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.8491,
+            "top5": 0.9717,
+            "macro_f1": 0.8066
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271148,
+        "usage": {
+            "prompt_tokens": 107692,
+            "completion_tokens": 4385,
+            "total_tokens": 112077,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-12b",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.3333,
+            "top5": 0.3333,
+            "macro_f1": 0.2333
+        },
+        "date": "2025-08-13",
+        "duration_ms": 222916,
+        "usage": {
+            "prompt_tokens": 7884,
+            "completion_tokens": 262,
+            "total_tokens": 8146,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen2.5-vl-32b-instruct",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.193,
+            "top5": 0.2105,
+            "macro_f1": 0.1151
+        },
+        "date": "2025-08-13",
+        "duration_ms": 272074,
+        "usage": {
+            "prompt_tokens": 47517,
+            "completion_tokens": 1900,
+            "total_tokens": 49417,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "x-ai/grok-2-vision-1212",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5287,
+            "top5": 0.7816,
+            "macro_f1": 0.4035
+        },
+        "date": "2025-08-13",
+        "duration_ms": 272337,
+        "usage": {
+            "prompt_tokens": 93246,
+            "completion_tokens": 3877,
+            "total_tokens": 97123,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-11b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.48,
+            "top5": 0.52,
+            "macro_f1": 0.4267
+        },
+        "date": "2025-08-13",
+        "duration_ms": 273577,
+        "usage": {
+            "prompt_tokens": 104378,
+            "completion_tokens": 1423,
+            "total_tokens": 105801,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen-vl-max",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.15,
+            "top5": 0.2417,
+            "macro_f1": 0.0849
+        },
+        "date": "2025-08-13",
+        "duration_ms": 270997,
+        "usage": {
+            "prompt_tokens": 281520,
+            "completion_tokens": 5359,
+            "total_tokens": 286879,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-large-2411",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1894,
+            "top5": 0.2803,
+            "macro_f1": 0.1098
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271943,
+        "usage": {
+            "prompt_tokens": 122412,
+            "completion_tokens": 8040,
+            "total_tokens": 130452,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-2024-11-20",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 1,
+            "top5": 1,
+            "macro_f1": 1
+        },
+        "date": "2025-08-13",
+        "duration_ms": 273044,
+        "usage": {
+            "prompt_tokens": 90185,
+            "completion_tokens": 3353,
+            "total_tokens": 93538,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.5-sonnet",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6957,
+            "top5": 0.8696,
+            "macro_f1": 0.6088
+        },
+        "date": "2025-08-13",
+        "duration_ms": 278766,
+        "usage": {
+            "prompt_tokens": 58995,
+            "completion_tokens": 3229,
+            "total_tokens": 62224,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-90b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4143,
+            "top5": 0.5714,
+            "macro_f1": 0.5192
+        },
+        "date": "2025-08-13",
+        "duration_ms": 272392,
+        "usage": {
+            "prompt_tokens": 171500,
+            "completion_tokens": 2633,
+            "total_tokens": 174133,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash-lite",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7698,
+            "top5": 0.9712,
+            "macro_f1": 0.7002
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271221,
+        "usage": {
+            "prompt_tokens": 141286,
+            "completion_tokens": 5973,
+            "total_tokens": 147259,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "z-ai/glm-4.5v",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.2604,
+            "top5": 0.2604,
+            "macro_f1": 0.3684
+        },
+        "date": "2025-08-13",
+        "duration_ms": 272343,
+        "usage": {
+            "prompt_tokens": 86722,
+            "completion_tokens": 8243,
+            "total_tokens": 94965,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7703,
+            "top5": 0.9189,
+            "macro_f1": 0.6952
+        },
+        "date": "2025-08-13",
+        "duration_ms": 272847,
+        "usage": {
+            "prompt_tokens": 63270,
+            "completion_tokens": 3915,
+            "total_tokens": 67185,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:beta",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7681,
+            "top5": 0.9275,
+            "macro_f1": 0.6925
+        },
+        "date": "2025-08-13",
+        "duration_ms": 272811,
+        "usage": {
+            "prompt_tokens": 58995,
+            "completion_tokens": 3674,
+            "total_tokens": 62669,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:thinking",
+        "benchmark": "PokeBench v1 (Gen1 151)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7639,
+            "top5": 0.9167,
+            "macro_f1": 0.6869
+        },
+        "date": "2025-08-13",
+        "duration_ms": 271341,
+        "usage": {
+            "prompt_tokens": 61560,
+            "completion_tokens": 3839,
+            "total_tokens": 65399,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.85,
+            "top5": 0.95,
+            "macro_f1": 0.8057
+        },
+        "date": "2025-08-13",
+        "duration_ms": 185617,
+        "usage": {
+            "prompt_tokens": 80600,
+            "completion_tokens": 3605,
+            "total_tokens": 84205,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-2024-11-20",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.99,
+            "top5": 0.99,
+            "macro_f1": 1
+        },
+        "date": "2025-08-13",
+        "duration_ms": 212770,
+        "usage": {
+            "prompt_tokens": 82200,
+            "completion_tokens": 3769,
+            "total_tokens": 85969,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-mini",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.83,
+            "top5": 0.91,
+            "macro_f1": 0.797
+        },
+        "date": "2025-08-13",
+        "duration_ms": 213359,
+        "usage": {
+            "prompt_tokens": 906700,
+            "completion_tokens": 3660,
+            "total_tokens": 910360,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-5-chat",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 1,
+            "top5": 1,
+            "macro_f1": 1
+        },
+        "date": "2025-08-13",
+        "duration_ms": 216694,
+        "usage": {
+            "prompt_tokens": 77700,
+            "completion_tokens": 4257,
+            "total_tokens": 81957,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.5-sonnet",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.58,
+            "top5": 0.69,
+            "macro_f1": 0.5038
+        },
+        "date": "2025-08-13",
+        "duration_ms": 282680,
+        "usage": {
+            "prompt_tokens": 61000,
+            "completion_tokens": 4571,
+            "total_tokens": 65571,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:beta",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.74,
+            "top5": 0.85,
+            "macro_f1": 0.67
+        },
+        "date": "2025-08-13",
+        "duration_ms": 287481,
+        "usage": {
+            "prompt_tokens": 61000,
+            "completion_tokens": 5376,
+            "total_tokens": 66376,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.74,
+            "top5": 0.84,
+            "macro_f1": 0.67
+        },
+        "date": "2025-08-13",
+        "duration_ms": 292969,
+        "usage": {
+            "prompt_tokens": 61000,
+            "completion_tokens": 5380,
+            "total_tokens": 66380,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:thinking",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.74,
+            "top5": 0.84,
+            "macro_f1": 0.67
+        },
+        "date": "2025-08-13",
+        "duration_ms": 294974,
+        "usage": {
+            "prompt_tokens": 61000,
+            "completion_tokens": 5360,
+            "total_tokens": 66360,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-sonnet-4",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.56,
+            "top5": 0.69,
+            "macro_f1": 0.5017
+        },
+        "date": "2025-08-13",
+        "duration_ms": 306937,
+        "usage": {
+            "prompt_tokens": 61000,
+            "completion_tokens": 4529,
+            "total_tokens": 65529,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-opus-4.1",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.78,
+            "top5": 0.85,
+            "macro_f1": 0.7737
+        },
+        "date": "2025-08-13",
+        "duration_ms": 476119,
+        "usage": {
+            "prompt_tokens": 59780,
+            "completion_tokens": 4911,
+            "total_tokens": 64691,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-12b",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.03,
+            "top5": 0.03,
+            "macro_f1": 0.0202
+        },
+        "date": "2025-08-13",
+        "duration_ms": 148944,
+        "usage": {
+            "prompt_tokens": 62400,
+            "completion_tokens": 2417,
+            "total_tokens": 64817,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen-vl-max",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.16,
+            "top5": 0.26,
+            "macro_f1": 0.1174
+        },
+        "date": "2025-08-13",
+        "duration_ms": 200520,
+        "usage": {
+            "prompt_tokens": 210700,
+            "completion_tokens": 4204,
+            "total_tokens": 214904,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-large-2411",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.12,
+            "top5": 0.22,
+            "macro_f1": 0.0722
+        },
+        "date": "2025-08-13",
+        "duration_ms": 216534,
+        "usage": {
+            "prompt_tokens": 66300,
+            "completion_tokens": 6319,
+            "total_tokens": 72619,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash-lite",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.78,
+            "top5": 0.94,
+            "macro_f1": 0.7167
+        },
+        "date": "2025-08-13",
+        "duration_ms": 217024,
+        "usage": {
+            "prompt_tokens": 80611,
+            "completion_tokens": 4119,
+            "total_tokens": 84730,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "x-ai/grok-2-vision-1212",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.65,
+            "top5": 0.79,
+            "macro_f1": 0.5783
+        },
+        "date": "2025-08-13",
+        "duration_ms": 270644,
+        "usage": {
+            "prompt_tokens": 84000,
+            "completion_tokens": 4441,
+            "total_tokens": 88441,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "z-ai/glm-4.5v",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.09,
+            "top5": 0.09,
+            "macro_f1": 0.1893
+        },
+        "date": "2025-08-13",
+        "duration_ms": 290364,
+        "usage": {
+            "prompt_tokens": 65144,
+            "completion_tokens": 10836,
+            "total_tokens": 75980,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-90b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.18,
+            "top5": 0.22,
+            "macro_f1": 0.4899
+        },
+        "date": "2025-08-13",
+        "duration_ms": 291904,
+        "usage": {
+            "prompt_tokens": 219500,
+            "completion_tokens": 2518,
+            "total_tokens": 222018,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/mistral-small-3.2-24b-instruct",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.15,
+            "top5": 0.2,
+            "macro_f1": 0.1088
+        },
+        "date": "2025-08-13",
+        "duration_ms": 344270,
+        "usage": {
+            "prompt_tokens": 60400,
+            "completion_tokens": 4296,
+            "total_tokens": 64696,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-11b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.29,
+            "top5": 0.3,
+            "macro_f1": 0.2777
+        },
+        "date": "2025-08-13",
+        "duration_ms": 397848,
+        "usage": {
+            "prompt_tokens": 483060,
+            "completion_tokens": 6051,
+            "total_tokens": 489111,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen2.5-vl-32b-instruct",
+        "benchmark": "PokeBench v1 (Gen2 100)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1,
+            "top5": 0.17,
+            "macro_f1": 0.0679
+        },
+        "date": "2025-08-13",
+        "duration_ms": 474821,
+        "usage": {
+            "prompt_tokens": 59416,
+            "completion_tokens": 3610,
+            "total_tokens": 63026,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-5-chat",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9926,
+            "top5": 1,
+            "macro_f1": 0.9901
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 125685,
+            "completion_tokens": 5747,
+            "total_tokens": 131432,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-2024-11-20",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9852,
+            "top5": 0.9926,
+            "macro_f1": 0.99
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 131760,
+            "completion_tokens": 4982,
+            "total_tokens": 136742,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-mini",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7037,
+            "top5": 0.8593,
+            "macro_f1": 0.6289
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 1244835,
+            "completion_tokens": 4333,
+            "total_tokens": 1249168,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-opus-4.1",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7407,
+            "top5": 0.7926,
+            "macro_f1": 0.7159
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 102735,
+            "completion_tokens": 6928,
+            "total_tokens": 109663,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-sonnet-4",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4222,
+            "top5": 0.4815,
+            "macro_f1": 0.3599
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 102735,
+            "completion_tokens": 6008,
+            "total_tokens": 108743,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.5-sonnet",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4889,
+            "top5": 0.5852,
+            "macro_f1": 0.4166
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 102735,
+            "completion_tokens": 6232,
+            "total_tokens": 108967,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5852,
+            "top5": 0.6889,
+            "macro_f1": 0.5173
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 102735,
+            "completion_tokens": 7125,
+            "total_tokens": 109860,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:beta",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5852,
+            "top5": 0.6889,
+            "macro_f1": 0.5173
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 102735,
+            "completion_tokens": 7169,
+            "total_tokens": 109904,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:thinking",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5852,
+            "top5": 0.6963,
+            "macro_f1": 0.5173
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 102735,
+            "completion_tokens": 7218,
+            "total_tokens": 109953,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.8222,
+            "top5": 0.8667,
+            "macro_f1": 0.7765
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 128250,
+            "completion_tokens": 4131,
+            "total_tokens": 132381,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.0-flash-001",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7185,
+            "top5": 0.7333,
+            "macro_f1": 0.6519
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 128250,
+            "completion_tokens": 3045,
+            "total_tokens": 131295,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash-lite",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6296,
+            "top5": 0.837,
+            "macro_f1": 0.5388
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 128250,
+            "completion_tokens": 5604,
+            "total_tokens": 133854,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/mistral-small-3.2-24b-instruct",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0667,
+            "top5": 0.1111,
+            "macro_f1": 0.0363
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 103275,
+            "completion_tokens": 5688,
+            "total_tokens": 108963,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-12b",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0074,
+            "top5": 0.0074,
+            "macro_f1": 0.0001
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 105975,
+            "completion_tokens": 2978,
+            "total_tokens": 108953,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-large-2411",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0593,
+            "top5": 0.1259,
+            "macro_f1": 0.0284
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 110700,
+            "completion_tokens": 8149,
+            "total_tokens": 118849,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen2.5-vl-32b-instruct",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1111,
+            "top5": 0.1481,
+            "macro_f1": 0.0655
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 102060,
+            "completion_tokens": 4512,
+            "total_tokens": 106572,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen-vl-max",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0889,
+            "top5": 0.1185,
+            "macro_f1": 0.0528
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 305235,
+            "completion_tokens": 4719,
+            "total_tokens": 309954,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "x-ai/grok-2-vision-1212",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4667,
+            "top5": 0.6148,
+            "macro_f1": 0.3835
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 134460,
+            "completion_tokens": 6005,
+            "total_tokens": 140465,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-11b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1111,
+            "top5": 0.1111,
+            "macro_f1": 0.0819
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 619416,
+            "completion_tokens": 4138,
+            "total_tokens": 623554,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-90b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0,
+            "top5": 0,
+            "macro_f1": 0
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 317520,
+            "completion_tokens": 1614,
+            "total_tokens": 319134,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "z-ai/glm-4.5v",
+        "benchmark": "PokeBench v1 (Gen3 135)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1852,
+            "top5": 0.2,
+            "macro_f1": 0.1526
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 109830,
+            "completion_tokens": 5321,
+            "total_tokens": 115151,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-5-chat",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.972,
+            "top5": 0.9813,
+            "macro_f1": 0.9748
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 87026,
+            "completion_tokens": 4506,
+            "total_tokens": 91532,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-2024-11-20",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9813,
+            "top5": 0.9907,
+            "macro_f1": 0.9874
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 92662,
+            "completion_tokens": 4058,
+            "total_tokens": 96720,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-mini",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7477,
+            "top5": 0.8879,
+            "macro_f1": 0.6807
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 974877,
+            "completion_tokens": 3581,
+            "total_tokens": 978458,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-opus-4.1",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5888,
+            "top5": 0.729,
+            "macro_f1": 0.6101
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 68052,
+            "completion_tokens": 7257,
+            "total_tokens": 75309,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-sonnet-4",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4953,
+            "top5": 0.6075,
+            "macro_f1": 0.4123
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 68052,
+            "completion_tokens": 4842,
+            "total_tokens": 72894,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.5-sonnet",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5794,
+            "top5": 0.757,
+            "macro_f1": 0.5065
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 68052,
+            "completion_tokens": 4719,
+            "total_tokens": 72771,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6636,
+            "top5": 0.8131,
+            "macro_f1": 0.5935
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 68052,
+            "completion_tokens": 5768,
+            "total_tokens": 73820,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:beta",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6636,
+            "top5": 0.8131,
+            "macro_f1": 0.5935
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 68052,
+            "completion_tokens": 5778,
+            "total_tokens": 73830,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:thinking",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6636,
+            "top5": 0.8131,
+            "macro_f1": 0.5935
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 68052,
+            "completion_tokens": 5796,
+            "total_tokens": 73848,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.8411,
+            "top5": 0.9533,
+            "macro_f1": 0.8084
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 89468,
+            "completion_tokens": 3848,
+            "total_tokens": 93316,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.0-flash-001",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.8131,
+            "top5": 0.9159,
+            "macro_f1": 0.7639
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 89452,
+            "completion_tokens": 3288,
+            "total_tokens": 92740,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash-lite",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7103,
+            "top5": 0.9159,
+            "macro_f1": 0.6393
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 89452,
+            "completion_tokens": 4382,
+            "total_tokens": 93834,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/mistral-small-3.2-24b-instruct",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0748,
+            "top5": 0.1215,
+            "macro_f1": 0.0455
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 69122,
+            "completion_tokens": 4554,
+            "total_tokens": 73676,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-12b",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.028,
+            "top5": 0.028,
+            "macro_f1": 0.0127
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 71262,
+            "completion_tokens": 2520,
+            "total_tokens": 73782,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-large-2411",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1402,
+            "top5": 0.1963,
+            "macro_f1": 0.0767
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 75328,
+            "completion_tokens": 6522,
+            "total_tokens": 81850,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen2.5-vl-32b-instruct",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0841,
+            "top5": 0.1589,
+            "macro_f1": 0.0359
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 68373,
+            "completion_tokens": 4262,
+            "total_tokens": 72635,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen-vl-max",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1308,
+            "top5": 0.2336,
+            "macro_f1": 0.0604
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 230157,
+            "completion_tokens": 4660,
+            "total_tokens": 234817,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "x-ai/grok-2-vision-1212",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5421,
+            "top5": 0.7664,
+            "macro_f1": 0.45
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 94160,
+            "completion_tokens": 4925,
+            "total_tokens": 99085,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-11b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1589,
+            "top5": 0.1589,
+            "macro_f1": 0.1203
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 426354,
+            "completion_tokens": 4052,
+            "total_tokens": 430406,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-90b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0,
+            "top5": 0,
+            "macro_f1": 0
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 239466,
+            "completion_tokens": 1271,
+            "total_tokens": 240737,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "z-ai/glm-4.5v",
+        "benchmark": "PokeBench v1 (Gen4 107)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1028,
+            "top5": 0.1028,
+            "macro_f1": 0.1018
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 74252,
+            "completion_tokens": 7444,
+            "total_tokens": 81696,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-5-chat",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9744,
+            "top5": 1,
+            "macro_f1": 0.9658
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 168324,
+            "completion_tokens": 6748,
+            "total_tokens": 175072,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-2024-11-20",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9872,
+            "top5": 1,
+            "macro_f1": 0.9829
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 175344,
+            "completion_tokens": 5978,
+            "total_tokens": 181322,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-mini",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6795,
+            "top5": 0.8462,
+            "macro_f1": 0.6006
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 1461564,
+            "completion_tokens": 5580,
+            "total_tokens": 1467144,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-opus-4.1",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6026,
+            "top5": 0.6987,
+            "macro_f1": 0.564
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 142584,
+            "completion_tokens": 9292,
+            "total_tokens": 151876,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-sonnet-4",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4487,
+            "top5": 0.5962,
+            "macro_f1": 0.3599
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 142584,
+            "completion_tokens": 7192,
+            "total_tokens": 149776,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.5-sonnet",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4872,
+            "top5": 0.641,
+            "macro_f1": 0.4136
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 142584,
+            "completion_tokens": 7012,
+            "total_tokens": 149596,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5833,
+            "top5": 0.7051,
+            "macro_f1": 0.5081
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 142584,
+            "completion_tokens": 8335,
+            "total_tokens": 150919,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:beta",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5833,
+            "top5": 0.6987,
+            "macro_f1": 0.5071
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 142584,
+            "completion_tokens": 8369,
+            "total_tokens": 150953,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:thinking",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5833,
+            "top5": 0.6987,
+            "macro_f1": 0.5071
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 142584,
+            "completion_tokens": 8266,
+            "total_tokens": 150850,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7949,
+            "top5": 0.891,
+            "macro_f1": 0.7447
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 167885,
+            "completion_tokens": 5599,
+            "total_tokens": 173484,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.0-flash-001",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6987,
+            "top5": 0.7628,
+            "macro_f1": 0.6179
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 167856,
+            "completion_tokens": 3700,
+            "total_tokens": 171556,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash-lite",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6154,
+            "top5": 0.8077,
+            "macro_f1": 0.5396
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 167856,
+            "completion_tokens": 6663,
+            "total_tokens": 174519,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/mistral-small-3.2-24b-instruct",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0577,
+            "top5": 0.1154,
+            "macro_f1": 0.0312
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 142272,
+            "completion_tokens": 8029,
+            "total_tokens": 150301,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-12b",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0128,
+            "top5": 0.0128,
+            "macro_f1": 0.0004
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 145392,
+            "completion_tokens": 3758,
+            "total_tokens": 149150,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-large-2411",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0897,
+            "top5": 0.1538,
+            "macro_f1": 0.0584
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 153660,
+            "completion_tokens": 8588,
+            "total_tokens": 162248,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen2.5-vl-32b-instruct",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0705,
+            "top5": 0.0962,
+            "macro_f1": 0.036
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 141113,
+            "completion_tokens": 5135,
+            "total_tokens": 146248,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen-vl-max",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1603,
+            "top5": 0.1795,
+            "macro_f1": 0.0963
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 375804,
+            "completion_tokens": 4868,
+            "total_tokens": 380672,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "x-ai/grok-2-vision-1212",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.4487,
+            "top5": 0.641,
+            "macro_f1": 0.3643
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 177060,
+            "completion_tokens": 7211,
+            "total_tokens": 184271,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-11b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0897,
+            "top5": 0.0897,
+            "macro_f1": 0.0781
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 769192,
+            "completion_tokens": 5431,
+            "total_tokens": 774623,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-90b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0192,
+            "top5": 0.0256,
+            "macro_f1": 0.6667
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 390624,
+            "completion_tokens": 2024,
+            "total_tokens": 392648,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "z-ai/glm-4.5v",
+        "benchmark": "PokeBench v1 (Gen5 156)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1987,
+            "top5": 0.2051,
+            "macro_f1": 0.1569
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 149640,
+            "completion_tokens": 5302,
+            "total_tokens": 154942,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-5-chat",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9861,
+            "top5": 0.9861,
+            "macro_f1": 1
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 47002,
+            "completion_tokens": 2989,
+            "total_tokens": 49991,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-2024-11-20",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.9583,
+            "top5": 1,
+            "macro_f1": 0.9444
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 50904,
+            "completion_tokens": 2671,
+            "total_tokens": 53575,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "openai/gpt-4o-mini",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7639,
+            "top5": 0.8889,
+            "macro_f1": 0.7162
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 644544,
+            "completion_tokens": 2355,
+            "total_tokens": 646899,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-opus-4.1",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6806,
+            "top5": 0.7778,
+            "macro_f1": 0.6386
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34704,
+            "completion_tokens": 3643,
+            "total_tokens": 38347,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-sonnet-4",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.6111,
+            "top5": 0.75,
+            "macro_f1": 0.5333
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34704,
+            "completion_tokens": 3278,
+            "total_tokens": 37982,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.5-sonnet",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.5833,
+            "top5": 0.75,
+            "macro_f1": 0.516
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34704,
+            "completion_tokens": 3373,
+            "total_tokens": 38077,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7222,
+            "top5": 0.9028,
+            "macro_f1": 0.6505
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34704,
+            "completion_tokens": 3741,
+            "total_tokens": 38445,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:beta",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7222,
+            "top5": 0.9028,
+            "macro_f1": 0.6481
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34704,
+            "completion_tokens": 3732,
+            "total_tokens": 38436,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "anthropic/claude-3.7-sonnet:thinking",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7222,
+            "top5": 0.9028,
+            "macro_f1": 0.6505
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34704,
+            "completion_tokens": 3749,
+            "total_tokens": 38453,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.8889,
+            "top5": 0.9444,
+            "macro_f1": 0.8588
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 48960,
+            "completion_tokens": 2636,
+            "total_tokens": 51596,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.0-flash-001",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.8194,
+            "top5": 0.8333,
+            "macro_f1": 0.7708
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 48960,
+            "completion_tokens": 1610,
+            "total_tokens": 50570,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "google/gemini-2.5-flash-lite",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7778,
+            "top5": 0.9583,
+            "macro_f1": 0.7083
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 48960,
+            "completion_tokens": 2720,
+            "total_tokens": 51680,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/mistral-small-3.2-24b-instruct",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1528,
+            "top5": 0.2361,
+            "macro_f1": 0.0903
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34151,
+            "completion_tokens": 2853,
+            "total_tokens": 37004,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-12b",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1429,
+            "top5": 0.1429,
+            "macro_f1": 0.0659
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 14028,
+            "completion_tokens": 662,
+            "total_tokens": 14690,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "mistralai/pixtral-large-2411",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.1429,
+            "top5": 0.3214,
+            "macro_f1": 0.0844
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 14868,
+            "completion_tokens": 1664,
+            "total_tokens": 16532,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen2.5-vl-32b-instruct",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.125,
+            "top5": 0.1667,
+            "macro_f1": 0.0838
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 34168,
+            "completion_tokens": 2979,
+            "total_tokens": 37147,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "qwen/qwen-vl-max",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.3194,
+            "top5": 0.4167,
+            "macro_f1": 0.2262
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 143424,
+            "completion_tokens": 3375,
+            "total_tokens": 146799,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "x-ai/grok-2-vision-1212",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.7222,
+            "top5": 0.9167,
+            "macro_f1": 0.656
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 51696,
+            "completion_tokens": 3338,
+            "total_tokens": 55034,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-11b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.2083,
+            "top5": 0.2222,
+            "macro_f1": 0.1893
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 346053,
+            "completion_tokens": 3371,
+            "total_tokens": 349424,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "meta-llama/llama-3.2-90b-vision-instruct",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.0972,
+            "top5": 0.1111,
+            "macro_f1": 0.5758
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 147680,
+            "completion_tokens": 1350,
+            "total_tokens": 149030,
+            "input_images": 0
+        }
+    },
+    {
+        "team": "PokeBenchAI",
+        "model": "z-ai/glm-4.5v",
+        "benchmark": "PokeBench v1 (Gen6 72)",
+        "task": "T1",
+        "metrics": {
+            "top1": 0.2917,
+            "top5": 0.2917,
+            "macro_f1": 0.3333
+        },
+        "date": "2025-08-13",
+        "duration_ms": 0,
+        "usage": {
+            "prompt_tokens": 39625,
+            "completion_tokens": 4784,
+            "total_tokens": 44409,
+            "input_images": 0
+        }
+    }
+]
