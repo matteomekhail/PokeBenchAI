@@ -30,7 +30,7 @@ function parseJsonl(text: string) {
     .filter(Boolean) as Array<{ image_id: string; class: string }>;
 }
 
-export default function Results({ title = 'Risultati (anteprima)', groundTruthPath = '/benchmarks/gen1/ground_truth.jsonl', predictionsPath = '/benchmarks/gen1/predictions_gemini2.json', imagesPath = '/benchmarks/gen1/images.json' }: Props) {
+export default function Results({ title = 'Results (preview)', groundTruthPath = '/benchmarks/gen1/ground_truth.jsonl', predictionsPath = '/benchmarks/gen1/predictions_gemini2.json', imagesPath = '/benchmarks/gen1/images.json' }: Props) {
   const [items, setItems] = useState<Row[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
@@ -78,8 +78,8 @@ export default function Results({ title = 'Risultati (anteprima)', groundTruthPa
     load();
   }, [groundTruthPath, predictionsPath, imagesPath]);
 
-  if (loading) return <div className="p-6">Caricamento…</div>;
-  if (error) return <div className="p-6 text-red-600">Errore: {error}</div>;
+  if (loading) return <div className="p-6">Loading…</div>;
+  if (error) return <div className="p-6 text-red-600">Error: {error}</div>;
 
   const accuracy = items.length
     ? (items.filter((r) => r.correct).length / items.length) * 100

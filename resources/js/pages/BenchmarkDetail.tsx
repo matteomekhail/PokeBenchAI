@@ -21,15 +21,15 @@ export default function BenchmarkDetail({ title = 'Benchmark', slug = '', series
     <div>
       <div className="mb-6">
         <h1 className="pk-title">{title}</h1>
-        <p className="text-xs text-gray-300">Confronto modelli (Top‑1 %)</p>
+        <p className="text-xs text-gray-300">Model comparison (Top‑1 %)</p>
       </div>
 
       {!hasData ? (
         <div className="flex items-center justify-center h-64 rounded-md border border-neutral-700 bg-neutral-850/50">
           <div className="text-center">
             <img src="/assets/ui/pokeball.svg" alt="pokeball" className="mx-auto mb-3 h-8 w-8 opacity-70" />
-            <p className="text-sm text-cream-300">Nessun risultato disponibile per questo benchmark.</p>
-            <p className="text-xs text-cream-400 mt-1">Esegui il benchmark per vedere il grafico.</p>
+            <p className="text-sm text-cream-300">No results available for this benchmark.</p>
+            <p className="text-xs text-cream-400 mt-1">Run the benchmark to see the chart.</p>
           </div>
         </div>
       ) : (
@@ -147,7 +147,7 @@ export default function BenchmarkDetail({ title = 'Benchmark', slug = '', series
       {/* micro-decorations */}
       <div className="mt-3 flex items-center gap-3 opacity-80">
         <img src="/assets/ui/ultraball.svg" alt="ultra" className="h-5 w-5"/>
-        <span className="text-[10px] text-gray-400">Tip: clicca una barra per navigare al dettaglio del modello</span>
+        <span className="text-[10px] text-gray-400">Tip: click a bar to open the model details</span>
       </div>
     </div>
   );

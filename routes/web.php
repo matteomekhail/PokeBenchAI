@@ -4,9 +4,65 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\BenchmarkController;
 
+/**
+ * @param array<int, array<string, mixed>> $results
+ * @return array<int, array{model:string, avg_top1:float|null, avg_top5:float|null, avg_macro_f1:float|null, count:int}>
+ */
+if (!function_exists('compute_model_averages')) {
+    function compute_model_averages(array $results): array
+    {
+        $byModel = [];
+        foreach ($results as $row) {
+            $model = (string) ($row['model'] ?? '');
+            if ($model === '') { continue; }
+            $metrics = (array) ($row['metrics'] ?? []);
+            $top1 = isset($metrics['top1']) && is_numeric($metrics['top1']) ? (float) $metrics['top1'] : null;
+            $top5 = isset($metrics['top5']) && is_numeric($metrics['top5']) ? (float) $metrics['top5'] : null;
+            $macro = isset($metrics['macro_f1']) && is_numeric($metrics['macro_f1']) ? (float) $metrics['macro_f1'] : null;
+            if (!isset($byModel[$model])) {
+                $byModel[$model] = ['top1' => [], 'top5' => [], 'macro_f1' => []];
+            }
+            if ($top1 !== null) { $byModel[$model]['top1'][] = $top1; }
+            if ($top5 !== null) { $byModel[$model]['top5'][] = $top5; }
+            if ($macro !== null) { $byModel[$model]['macro_f1'][] = $macro; }
+        }
+
+        $out = [];
+        foreach ($byModel as $modelName => $vals) {
+            $avg = function (array $arr): ?float {
+                $n = count($arr);
+                return $n > 0 ? array_sum($arr) / $n : null;
+            };
+            $count = max(count($vals['top1']), count($vals['top5']), count($vals['macro_f1']));
+            $out[] = [
+                'model' => (string) $modelName,
+                'avg_top1' => $avg($vals['top1']),
+                'avg_top5' => $avg($vals['top5']),
+                'avg_macro_f1' => $avg($vals['macro_f1']),
+                'count' => $count,
+            ];
+        }
+
+        usort($out, function ($a, $b) {
+            $avga = $a['avg_top1'] ?? null;
+            $avgb = $b['avg_top1'] ?? null;
+            if ($avga === $avgb) { return 0; }
+            if ($avga === null) { return 1; }
+            if ($avgb === null) { return -1; }
+            return $avga < $avgb ? 1 : -1;
+        });
+
+        return array_values($out);
+    }
+}
+
 Route::get('/', function () {
+    /** @var array<int, array<string, mixed>> $results */
     $results = json_decode(file_get_contents(base_path('resources/data/leaderboard.json')), true);
     $slugify = fn(string $s) => trim(strtolower(preg_replace('/[^a-z0-9]+/i', '-', $s)), '-');
+
+    // Calcola medie per modello (classifica media)
+    $modelAverages = compute_model_averages($results);
 
     // Tests dal leaderboard (normalizza slug a genX se possibile)
     $testsFromLeaderboard = collect($results)
@@ -23,7 +79,7 @@ Route::get('/', function () {
             ];
         })->keyBy('slug');
 
-    // Tests dalle cartelle in public/benchmarks (gen1..gen9)
+    // Tests from folders in public/benchmarks (gen1..gen9)
     $benchBase = public_path('benchmarks');
     $dirTests = collect();
     if (is_dir($benchBase)) {
@@ -42,11 +98,12 @@ Route::get('/', function () {
         }
     }
 
-    // Merge: preferisci i dati del leaderboard, completa con directory (de-dup per slug)
+    // Merge: prefer leaderboard data, fill with directories (de‑dup by slug)
     $merged = $dirTests->merge($testsFromLeaderboard)->keyBy('slug')->values()->all();
 
     return Inertia::render('Home', [
         'tests' => $merged,
+        'modelAverages' => $modelAverages,
     ]);
 });
 
@@ -85,7 +142,7 @@ Route::get('/benchmarks/{slug}', function (string $slug) {
     }
 
     if ($filtered->isEmpty()) {
-        // Se non ci sono risultati, accetta slug tipo genX e mostra pagina vuota
+        // If there are no results, accept slug like genX and show an empty page
         if (preg_match('/^gen([1-9])$/', $slug, $m)) {
             $benchBase = public_path('benchmarks');
             $labels = $benchBase . DIRECTORY_SEPARATOR . $slug . DIRECTORY_SEPARATOR . 'labels.txt';

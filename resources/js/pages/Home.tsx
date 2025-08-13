@@ -1,5 +1,16 @@
 import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import { Head, usePage } from '@inertiajs/react';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 interface PageProps {
   tests: Array<{
@@ -7,6 +18,7 @@ interface PageProps {
     slug: string;
     modelsCount: number;
   }>;
+  modelAverages?: Array<{ model: string; avg_top1: number | null; avg_top5: number | null; avg_macro_f1: number | null; count: number }>;
   [key: string]: any;
 }
 
@@ -29,7 +41,7 @@ function parseGenFromName(name: string): number | null {
 }
 
 export default function Home() {
-  const { tests } = usePage<PageProps>().props;
+  const { tests, modelAverages = [] } = usePage<PageProps>().props;
 
   return (
     <>
@@ -40,9 +52,46 @@ export default function Home() {
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold mb-3 text-cream-100 font-pixel">PokeBenchAI</h1>
             <p className="text-base text-cream-300 max-w-2xl mx-auto">
-              Seleziona una generazione per vedere i risultati del benchmark AI sul riconoscimento di Pokémon
+              Select a generation to view AI benchmark results for Pokémon recognition
             </p>
           </div>
+
+          {modelAverages.length > 0 && (
+            <div className="bg-neutral-850/50 border border-neutral-700 rounded-md p-5 mb-8">
+              <h2 className="text-lg font-bold mb-3 text-cream-100">Average model ranking (Top‑1)</h2>
+              <Bar
+                data={{
+                  labels: modelAverages.map(m => m.model),
+                  datasets: [
+                    {
+                      label: 'Top‑1 % (media)',
+                      data: modelAverages.map(m => m.avg_top1 != null ? m.avg_top1 * 100 : null),
+                      backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                      borderColor: 'rgba(59, 130, 246, 1)',
+                      borderWidth: 1,
+                    },
+                  ],
+                }}
+                options={{
+                  indexAxis: 'y',
+                  responsive: true,
+                  plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                      callbacks: {
+                        label: (ctx) => `${ctx.parsed.x?.toFixed(2) ?? '—'}%`,
+                      },
+                    },
+                  },
+                  scales: {
+                    x: { ticks: { color: '#d1d5db', callback: (v: any) => `${v}%` }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                    y: { ticks: { color: '#d1d5db' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                  },
+                }}
+              />
+              <div className="mt-2 text-xs text-cream-400">Average computed across all available benchmarks for each model</div>
+            </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {tests.map((t) => {
@@ -66,7 +115,7 @@ export default function Home() {
                     </h2>
                   </div>
                   <div className="text-sm text-cream-300 mb-3">
-                    Modelli: {t.modelsCount}
+                    Models: {t.modelsCount}
                   </div>
                   <div className="text-xs text-cream-400">
                     {count > 0 ? `${count} Pokémon` : 'Benchmark'}

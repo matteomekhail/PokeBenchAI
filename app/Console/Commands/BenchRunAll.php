@@ -75,8 +75,8 @@ class BenchRunAll extends Command
 
         // Validate benchmark
         if (!array_key_exists($benchmark, $this->availableBenchmarks)) {
-            $this->error("❌ Benchmark non valido: {$benchmark}");
-            $this->info("📋 Benchmark disponibili:");
+            $this->error("❌ Invalid benchmark: {$benchmark}");
+            $this->info("📋 Available benchmarks:");
             foreach ($this->availableBenchmarks as $key => $description) {
                 $this->info("   - {$key}: {$description}");
             }

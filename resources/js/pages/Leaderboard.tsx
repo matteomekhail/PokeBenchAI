@@ -17,7 +17,7 @@ export default function Leaderboard({ results = [] }: Props) {
     <div className="max-w-6xl mx-auto p-6">
       <div className="mb-6">
         <h1 className="pk-title">PokeBenchAI</h1>
-        <p className="text-xs text-gray-700">Benchmark: Gen1 (151) • Modello: {r?.model || '—'}</p>
+        <p className="text-xs text-gray-700">Benchmark: Gen1 (151) • Model: {r?.model || '—'}</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -59,8 +59,8 @@ export default function Leaderboard({ results = [] }: Props) {
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="text-sm text-gray-600">Aggiornato: {r?.date || '—'}</div>
-        <Link href="/results/gen1" className="px-4 py-2 rounded border hover:bg-gray-50">Vedi risultati Gen1</Link>
+        <div className="text-sm text-gray-600">Updated: {r?.date || '—'}</div>
+        <Link href="/results/gen1" className="px-4 py-2 rounded border hover:bg-gray-50">View Gen1 results</Link>
       </div>
     </div>
   );
